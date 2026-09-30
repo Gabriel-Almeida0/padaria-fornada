@@ -6,9 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --test src/lib/*.test.ts",
+    "placeholders": "node scripts/gerar-placeholders.mjs",
+    "gerar-imagens": "node scripts/gerar-imagens.mjs"
   },
   "dependencies": {
+    "lucide-react": "^1.48.0",
     "next": "16.3.7",
     "react": "19.2.8",
     "react-dom": "19.2.8"
@@ -20,7 +24,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.7",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "type": "module"
 }

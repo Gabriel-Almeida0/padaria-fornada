@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# chave do Nano Banana (Gemini)
+nanobanana.env
+
+# material de referência de terceiros e prints de verificação (fora do repositório público)
+docs/referencia/*
+!docs/referencia/*.md
+docs/verificacao/*
+!docs/verificacao/*.md
+docs/imagens-geradas/
