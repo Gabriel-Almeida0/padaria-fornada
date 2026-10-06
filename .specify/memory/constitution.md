@@ -3,7 +3,7 @@ Sync Impact Report
 - Versão: (template sem versão) → 1.0.0
 - Princípios definidos (novos, a partir do template):
   I. Estático, pedido só pelo WhatsApp
-  II. Inspirado no Benjamin, sem cópia, corrigindo os pontos fracos
+  II. Inspirado na referência, sem cópia, corrigindo os pontos fracos
   III. Acessibilidade e responsividade não negociáveis
   IV. Performance e SEO
   V. Conteúdo como dado, seções isoladas (paralelismo)
@@ -37,17 +37,17 @@ O site é de uma padaria fictícia, peça de portfólio, publicada como site est
 
 Racional: o valor está no design e na experiência de pedido, não em infraestrutura.
 
-### II. Inspirado no Benjamin, sem cópia, corrigindo os pontos fracos
+### II. Inspirado na referência, sem cópia, corrigindo os pontos fracos
 
-- O sistema visual DEVE seguir a seção (e) de `docs/referencia/benjamin-auditoria.md`: o espírito
-  do Benjamin a Padaria (serifa marcante nos títulos, muito respiro, fotografia de produto como
+- O sistema visual DEVE seguir a seção (e) de `docs/referencia/auditoria-referencia.md` (fora do repositório público): o espírito
+  de uma padaria real de referência (serifa marcante nos títulos, muito respiro, fotografia de produto como
   protagonista, paleta quente e contida), com paleta e fontes próprias.
 - Cada ponto fraco da seção (d) da auditoria DEVE ter uma resposta rastreável na spec (requisito
   ou decisão explícita de não tratar).
 - Cores, fontes, raios, sombras e espaçamentos DEVEM sair de tokens (`@theme` em `globals.css`);
   hexadecimais soltos em componentes são proibidos (inclusive o verde do WhatsApp: token
   `--whatsapp`).
-- NENHUM texto, logo, foto, ícone, nome de produto exclusivo ou mockup do Benjamin pode ser
+- NENHUM texto, logo, foto, ícone, nome de produto exclusivo ou mockup da referência pode ser
   reutilizado. Nome, endereço, telefone, textos e imagens são inventados para a Fornada.
 
 Racional: demonstrar domínio de um estilo e capacidade de melhorar UX, não clonar uma marca.

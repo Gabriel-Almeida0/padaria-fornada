@@ -6,7 +6,7 @@
 
 ## Summary
 
-Site one-page estático de uma padaria fictícia. Estilo inspirado no Benjamin a Padaria (serifa
+Site one-page estático de uma padaria fictícia. Estilo inspirado numa padaria real de referência (serifa
 calorosa, foto de produto protagonista, paleta quente e curta, cantos retos, muito respiro), com
 sistema visual próprio (Fraunces + Figtree; casca, miolo, trigo, brasa, alecrim, mel). O coração é
 o pedido: cardápio com preço → sacola (gaveta `<dialog>`) → dados do pedido → WhatsApp com a
@@ -47,13 +47,13 @@ Playwright MCP (390/1440/360) seguindo [quickstart.md](./quickstart.md); Lightho
 dobra < 1 MB.
 
 **Constraints**: sem backend; WCAG 2.1 AA; alvos ≥ 44px; sem scroll horizontal; sem autoplay;
-`prefers-reduced-motion`; nada do Benjamin reutilizado.
+`prefers-reduced-motion`; nada da referência reutilizado.
 
 **Scale/Scope**: 1 página, 9 seções, 22 produtos, ~27 imagens, ~35 componentes, 5 módulos de lógica.
 
 ## Sistema visual
 
-Fonte: `docs/referencia/benjamin-auditoria.md` seção (e). Resumo normativo:
+Fonte: `docs/referencia/auditoria-referencia.md` (fora do repositório público) seção (e). Resumo normativo:
 
 ### Tokens (`src/app/globals.css`)
 
@@ -106,7 +106,7 @@ texto sobre claro; botão WhatsApp em `alecrim` com texto branco (6,46:1); borda
   o anel é `mel`.
 - Movimento: fade/subida ≤ 12px em 200ms; nenhum autoplay; tudo desliga em reduced motion.
 - Ícones Lucide com `strokeWidth={1.5}`; logo "Fornada" em texto Fraunces + um pequeno símbolo
-  SVG próprio (espiga estilizada), nada do Benjamin.
+  SVG próprio (espiga estilizada), nada da referência.
 
 ### Ordem das seções (`page.tsx`) e fundos
 
@@ -183,7 +183,7 @@ scripts/
 └── gerar-placeholders.mjs
 public/images/ (+ produtos/)
 docs/
-├── referencia/ (auditoria + prints do Benjamin)
+├── referencia/ (auditoria + prints da referência)
 ├── verificacao/ (prints e relatórios da Fornada)
 └── prompts-imagens.md
 ```

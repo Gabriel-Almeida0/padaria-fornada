@@ -43,9 +43,8 @@ next-env.d.ts
 # chave do Nano Banana (Gemini)
 nanobanana.env
 
-# material de referência de terceiros e prints de verificação (fora do repositório público)
-docs/referencia/*
-!docs/referencia/*.md
+# material de referência de terceiros (inclui a auditoria do site real usado como referência) e prints de verificação (fora do repositório público)
+docs/referencia/
 docs/verificacao/*
 !docs/verificacao/*.md
 docs/imagens-geradas/

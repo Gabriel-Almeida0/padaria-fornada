@@ -7,11 +7,11 @@
 **Status**: Draft
 
 **Input**: User description: "Site one-page da Fornada Padaria (fictícia, portfólio) inspirado no estilo
-do Benjamin a Padaria: hero de produto, 'queridinhos', cardápio por categoria com preço e botão de
+de uma padaria real de referência: hero de produto, 'queridinhos', cardápio por categoria com preço e botão de
 adicionar, sacola lateral, dados do pedido (nome, retirada ou entrega, endereço, horário, forma de
 pagamento na entrega, observações) e botão que abre o WhatsApp com o pedido formatado. Também
 encomendas (bolos/cestas com antecedência), sobre a padaria, horários/endereço, rodapé. Deve corrigir
-os pontos fracos de UX/design do Benjamin listados em docs/referencia/benjamin-auditoria.md."
+os pontos fracos de UX/design da referência listados em docs/referencia/auditoria-referencia.md (fora do repositório público)."
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -262,7 +262,7 @@ Nome: Mariana
 
 ## Rastreabilidade dos pontos fracos da referência
 
-Preenchida a partir de `docs/referencia/benjamin-auditoria.md`, seção (d). Cada linha liga um
+Preenchida a partir de `docs/referencia/auditoria-referencia.md` (fora do repositório público), seção (d). Cada linha liga um
 problema medido na referência ao requisito que o resolve.
 
 | # | Problema na referência (sev.) | Requisito(s) |

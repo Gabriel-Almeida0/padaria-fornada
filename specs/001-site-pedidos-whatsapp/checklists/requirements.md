@@ -35,5 +35,5 @@
   assumidas e registradas em "Assumptions" em vez de viraram perguntas: não mudam a arquitetura e
   são fáceis de trocar no conteúdo.
 - A tabela "Rastreabilidade" depende da auditoria da referência
-  (`docs/referencia/benjamin-auditoria.md`) e é preenchida antes do `/speckit-plan` (FR-032).
+  (`docs/referencia/auditoria-referencia.md` (fora do repositório público)) e é preenchida antes do `/speckit-plan` (FR-032).
 - "wa.me" aparece só na constituição, não na spec: a spec fala em "abrir o WhatsApp".

@@ -41,7 +41,7 @@ Viewports: 390×844 e 1440×900 (e uma checagem em 360×740).
     Console sem erros. Todos os alvos interativos ≥ 44×44 em 390 (script que mede
     `getBoundingClientRect` de `a, button, input, select, textarea, [role=radio]`).
 12. **Screenshots**: salvar em `docs/verificacao/` (`{390|1440}-{secao}.png`) e comparar o clima
-    com `docs/referencia/benjamin-*.png`.
+    com `docs/referencia/*.png`.
 
 ## Lighthouse (mobile, build de produção)
 

@@ -102,9 +102,9 @@ O `sharp` já converte para sRGB e remove os metadados. Se o peso passar do teto
   an oat-colored raw linen apron dusted with flour*.
 - Não use nomes de pessoas reais, de marcas nem "no estilo de" fotógrafos.
 
-### O que não copiar do Benjamin
+### O que não copiar da referência
 
-A referência (`docs/referencia/benjamin-auditoria.md`, item (c) 3) vale só como **princípio**: foto
+A referência (`docs/referencia/auditoria-referencia.md` (fora do repositório público), item (c) 3) vale só como **princípio**: foto
 de produto grande, retrato, luz natural, madeira e pedra, sem molduras. Nada de recriar as fotos
 deles. Em especial, **evite**: cesta de vime cheia de croissants com potinhos de geleia e colherinhas
 de madeira; moedor de café manual de madeira; papel com estampa de estrelinhas verdes; guardanapo
@@ -638,7 +638,7 @@ Negative: comum + `colorful sprinkles, rainbow sprinkles, strawberries, whipped 
 - **Onde aparece**: card de encomenda (seção Encomendas, variações Individual e Para dois).
 - **Corte**: a cesta inteira no quadrado central, vista a ~40° para dentro dela, com os itens
   reconhecíveis. É a mesma cesta da foto `encomendas.jpg`.
-- **Cuidado**: é aqui que mais se corre o risco de parecer o Benjamin. **Não** faça cesta só de
+- **Cuidado**: é aqui que mais se corre o risco de parecer a referência. **Não** faça cesta só de
   croissants com potinhos de geleia e colherinhas; a geleia vem **num pote de vidro fechado, sem
   rótulo**, e a cesta tem de tudo um pouco.
 - **Intenção (pt-BR)**: pães, folhados, geleia da casa, frutas, suco e café — chega pronta para abrir
@@ -683,7 +683,7 @@ Negative: comum + `tea bags with branded tags, tea tin with label, wicker picnic
       largura e veja se ainda dá para saber o que é).
 - [ ] A foto bate com a descrição do cardápio e com o `alt` do manifesto (calda por cima, seis pães,
       queijo puxando, sem canela no cappuccino…).
-- [ ] Nada que lembre as fotos do Benjamin (cesta de croissant com geleias, moedor, papel de
+- [ ] Nada que lembre as fotos da referência (cesta de croissant com geleias, moedor, papel de
       estrelinhas, guardanapo verde).
 - [ ] Nome e pasta idênticos (`public/images/…`, produtos em `public/images/produtos/`).
 - [ ] `.next/cache/images` apagado e página recarregada.

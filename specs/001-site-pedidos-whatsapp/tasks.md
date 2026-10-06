@@ -10,7 +10,7 @@ Formato: `- [ ] Txxx [P?] [USn?] descrição com caminho`. **Bloco** = dono excl
 Regras para quem implementa (valem para todas as tarefas):
 - Ler `AGENTS.md` e o guia do Next indicado no plano antes de usar `next/font`, `next/image` ou
   `metadata`.
-- Nenhum hex solto em componente; usar tokens. Nenhum texto do Benjamin.
+- Nenhum hex solto em componente; usar tokens. Nenhum texto da referência.
 - Módulos em `src/lib/` e `src/content/{loja,cardapio,textos}.ts` importam com caminho relativo e
   extensão `.ts`; sem `enum`/`namespace`/`@/` (research R3). Componentes usam `@/`.
 - Não fazer `git commit`.
@@ -123,7 +123,7 @@ Regras para quem implementa (valem para todas as tarefas):
 - [X] T048 Rodar `npm run lint && npm test && npm run build`
 - [X] T049 Quickstart completo (passos 1–12) em 360/390/1440, incluindo teclado e storage bloqueado; corrigir o que falhar
 - [X] T050 Lighthouse mobile em build de produção (`docs/verificacao/lighthouse.json`) e ajustar até as metas
-- [X] T051 Revisão final de originalidade: nenhum texto, nome de seção ("queridinhos da [marca]", "Tradição"), cor (#7F554E, #F4EED3, #FF632C, #9EBBAB, #C59274), fonte (Mackay, Gopher) ou imagem do Benjamin; atualizar `README.md` do projeto (o que é, como rodar, como trocar imagens)
+- [X] T051 Revisão final de originalidade: nenhum texto, nome de seção ("queridinhos da [marca]", "Tradição"), cor, fonte ou imagem da referência; atualizar `README.md` do projeto (o que é, como rodar, como trocar imagens)
 
 ---
 
