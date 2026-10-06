@@ -24,7 +24,7 @@ export function Header() {
           aria-label={loja.marca}
           className="-ml-1 inline-flex min-h-11 shrink-0 items-center rounded-botao px-1 text-casca"
         >
-          <Logo className="text-[1.375rem] sm:text-2xl" />
+          <Logo className="text-[1.25rem] min-[380px]:text-[1.375rem] sm:text-2xl" />
         </a>
 
         <nav aria-label={textos.rodape.navegacao} className="hidden lg:block">
@@ -43,7 +43,7 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-1 sm:gap-3">
-          <div className="mr-1 whitespace-nowrap lg:mr-0">
+          <div className="mr-1 whitespace-nowrap max-[379px]:mr-0 lg:mr-0">
             <StatusFuncionamento variante="curto" />
           </div>
           <div className="hidden lg:block">

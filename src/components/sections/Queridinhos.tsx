@@ -26,7 +26,7 @@ export function Queridinhos() {
           className="flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto overscroll-x-contain px-5 pb-4 [scrollbar-width:thin] md:grid md:snap-none md:grid-cols-3 md:gap-x-6 md:gap-y-14 md:overflow-visible md:px-0 md:pb-0 lg:gap-x-8"
         >
           {destaques.map((produto) => (
-            <li key={produto.id} className="w-[78%] max-w-80 shrink-0 snap-start md:w-auto md:max-w-none">
+            <li key={produto.id} className="relative w-[78%] max-w-80 shrink-0 snap-start md:w-auto md:max-w-none">
               <CardProduto
                 produto={produto}
                 sizes="(min-width: 80rem) 340px, (min-width: 48rem) 30vw, 78vw"

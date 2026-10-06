@@ -29,7 +29,7 @@ export function ControleQuantidade({ chave, nome, quantidade, tamanho = 'md', cl
     <div
       role="group"
       aria-label={t.quantidadeAria(nome)}
-      className={`inline-flex items-center justify-between rounded-botao border-[1.5px] border-casca bg-papel ${className}`}
+      className={`relative inline-flex items-center justify-between rounded-botao border-[1.5px] border-casca bg-papel ${className}`}
     >
       <button
         type="button"
