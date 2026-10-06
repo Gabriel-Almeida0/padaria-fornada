@@ -125,8 +125,7 @@ export const textos = {
     navegacao: 'Navegação',
     contato: 'Contato',
     horarios: 'Horários',
-    redes: 'Redes',
-    aviso: 'Projeto fictício de portfólio — a Fornada não é uma padaria real.',
+    aviso: 'Projeto fictício de portfólio — negócio, depoimentos e números ilustrativos; fotos geradas por IA.',
     direitos: 'Fornada Padaria',
   },
 

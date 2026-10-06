@@ -17,8 +17,6 @@ export const loja: Loja = {
     cep: '00000-000',
   },
   mapaUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoTexto)}`,
-  instagram: '@fornada.padaria',
-  instagramUrl: 'https://www.instagram.com/fornada.padaria',
   fuso: 'America/Sao_Paulo',
   horarios: {
     0: { abre: 420, fecha: 780 }, // domingo, 7h às 13h

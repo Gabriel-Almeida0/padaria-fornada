@@ -34,8 +34,6 @@ export type Loja = {
   whatsappExibicao: string
   endereco: Endereco
   mapaUrl: string
-  instagram: string
-  instagramUrl: string
   fuso: string
   horarios: Record<DiaSemana, Expediente>
   preparoMin: Record<Modo, number>

@@ -14,7 +14,7 @@ Tudo é conteúdo estático tipado em `src/content/` ou estado do navegador. Val
 | `whatsappExibicao` | string | "(11) 90000-0000" |
 | `endereco` | `{ rua, numero, bairro, cidade, uf, cep }` | Rua do Fermento, 212 — Vila Serena, São Paulo/SP |
 | `mapaUrl` | string | busca do Google Maps pelo endereço fictício |
-| `instagram` | string | `@fornada.padaria` (fictício) |
+| ~~`instagram`~~ | — | removido: o perfil não existe (auditoria FOR-13) |
 | `fuso` | string | `America/Sao_Paulo` |
 | `horarios` | `Record<0..6, { abre: minutos, fecha: minutos } \| null>` | seg–sáb 420–1200 (7h–20h); dom 420–780 (7h–13h) |
 | `preparoMin` | `{ retirada: 20, entrega: 40 }` | minutos |

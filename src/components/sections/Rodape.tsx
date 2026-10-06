@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { linkWhatsApp } from '@/lib/mensagem'
 import { Container } from '@/components/ui/Container'
-import { IconeInstagram, IconeLocal, IconeTelefone, IconeWhatsApp } from '@/components/ui/Icone'
+import { IconeLocal, IconeTelefone, IconeWhatsApp } from '@/components/ui/Icone'
 import { Logo } from '@/components/ui/Logo'
 import { loja } from '@/content/loja'
 import { textos } from '@/content/textos'
@@ -91,12 +91,6 @@ export function Rodape() {
                   <li key={linha}>{linha}</li>
                 ))}
               </ul>
-            </Coluna>
-            <Coluna titulo={t.redes} id="rodape-redes">
-              <a href={loja.instagramUrl} target="_blank" rel="noopener noreferrer" className={link}>
-                <IconeInstagram size={20} className="shrink-0 text-mel" />
-                {loja.instagram}
-              </a>
             </Coluna>
           </div>
         </div>
