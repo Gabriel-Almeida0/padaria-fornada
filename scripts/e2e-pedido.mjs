@@ -1,11 +1,10 @@
 // E2E do fluxo de pedido (quickstart passos 3–11) contra http://localhost:3200/ (npm run build && npx next start -p 3200).
-// Uso: node /private/tmp/claude-501/fornada-c-e2e.mjs [--prints]
-import { createRequire } from 'node:module'
-const require = createRequire(import.meta.url)
-const { chromium } = require('/Users/gabrielalmeidasantosmelo/projetos/pbn/node_modules/playwright')
+// Uso: node scripts/e2e-pedido.mjs [--prints]
+import { fileURLToPath } from 'node:url'
+import { chromium } from 'playwright'
 
-const BASE = 'http://localhost:3200/'
-const DOCS = '/Users/gabrielalmeidasantosmelo/projetos/padaria-fornada/docs/verificacao'
+const BASE = `http://localhost:${process.env.PORTA || 3200}/`
+const DOCS = fileURLToPath(new URL('../docs/verificacao', import.meta.url))
 const PRINTS = process.argv.includes('--prints')
 // quarta, 30/09/2026, 15:00 em São Paulo (mesmo "agora" do caso M1)
 const AGORA = new Date('2026-09-30T15:00:00-03:00')
@@ -17,7 +16,7 @@ function ok(passo, cond, detalhe = '') {
   if (!cond) falhou = true
 }
 
-const browser = await chromium.launch({ channel: 'chrome', headless: true })
+const browser = await chromium.launch({ channel: process.env.PW_CHANNEL || 'chrome', headless: true })
 
 async function novaPagina({ width = 390, height = 844, bloquearStorage = false } = {}) {
   const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1 })
@@ -406,6 +405,27 @@ async function alvosPequenosNaGaveta(page, passo) {
   await alvosPequenosNaGaveta(page, '360')
   await semScrollHorizontal(page, '360')
   ok('console', erros.length === 0, `sem erros de console (360) ${erros.join(' | ')}`)
+  await ctx.close()
+}
+
+// ---------------------------------------------------- carrossel no celular (auditoria FOR-03)
+// Adicionar pelos cards do meio do trilho não pode alargar a página nem esconder "Ver sacola".
+for (const width of [360, 390]) {
+  const ctx = await browser.newContext({ viewport: { width, height: 800 }, isMobile: true, hasTouch: true })
+  const page = await ctx.newPage()
+  await page.clock.install({ time: AGORA })
+  await page.goto(BASE, { waitUntil: 'networkidle' })
+  const cards = page.locator('#mais-pedidos ul').first().locator(':scope > li')
+  for (let i = 1; i < (await cards.count()); i++) {
+    const botao = cards.nth(i).getByRole('button', { name: /^Adicionar .* à sacola$/ })
+    if (!(await botao.count())) continue
+    await botao.first().scrollIntoViewIfNeeded()
+    await botao.first().click()
+    await page.waitForTimeout(150)
+    const [vw, sw] = await page.evaluate(() => [innerWidth, document.documentElement.scrollWidth])
+    ok('FOR-03', sw <= width && vw === width, `${width}px, card ${i + 1}: scrollWidth ${sw}`)
+  }
+  ok('FOR-03', await page.getByText(/ver sacola/i).first().isVisible(), `${width}px: "Ver sacola" visível`)
   await ctx.close()
 }
 

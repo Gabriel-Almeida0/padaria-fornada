@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Tipos
+        run: npx tsc --noEmit
+      - name: Testes
+        run: npm test
+      - name: Build
+        run: npm run build
+      - name: E2E (Playwright)
+        env:
+          PW_CHANNEL: chromium
+          PORTA: 3200
+        run: |
+          npx playwright install --with-deps chromium
+          npx next start -p 3200 &
+          npx --yes wait-on@8 -t 60000 http://localhost:3200/
+          node scripts/e2e-pedido.mjs

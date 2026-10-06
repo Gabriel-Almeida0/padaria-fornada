@@ -2,12 +2,10 @@
 // Tira screenshot do dev server compartilhado (porta 3200) com um Chrome headless próprio,
 // para vários agentes poderem conferir o visual ao mesmo tempo. Também imprime scrollWidth,
 // erros de console e alvos interativos menores que 44px.
-import { createRequire } from 'node:module'
-const require = createRequire(import.meta.url)
-const { chromium } = require('/Users/gabrielalmeidasantosmelo/projetos/pbn/node_modules/playwright')
+import { chromium } from 'playwright'
 
 const [caminho = '/', saida = 'docs/verificacao/print.png', w = '390', h = '844', full = '1'] = process.argv.slice(2)
-const browser = await chromium.launch({ channel: 'chrome', headless: true })
+const browser = await chromium.launch({ channel: process.env.PW_CHANNEL || 'chrome', headless: true })
 const page = await browser.newPage({ viewport: { width: +w, height: +h }, deviceScaleFactor: 1 })
 const erros = []
 page.on('console', (m) => m.type() === 'error' && erros.push(m.text()))

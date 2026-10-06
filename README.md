@@ -4,9 +4,9 @@ Site de uma padaria **fictícia**, feito como peça de portfólio. A pessoa mont
 cardápio, revisa na sacola, preenche nome, retirada ou entrega, horário e pagamento, e o site abre
 o WhatsApp da padaria com a mensagem pronta. Não há backend: tudo roda no navegador.
 
-O estilo foi inspirado no site do Benjamin a Padaria, **sem copiar** textos, cores, fontes nem
-imagens. Os 22 pontos fracos de UX e design medidos nele estão em
-`docs/referencia/benjamin-auditoria.md` e cada um foi ligado a um requisito na spec.
+O estilo foi inspirado no site de uma padaria real usada como referência (não nomeada), **sem copiar**
+textos, cores, fontes nem imagens. Os 22 pontos fracos de UX e design medidos nele ficaram fora do
+repositório público; a spec lista cada um, sem identificar o site, ligado ao requisito que o resolve.
 
 ## Stack
 
@@ -26,11 +26,13 @@ npm run lint
 npm run build
 ```
 
-Teste de ponta a ponta do fluxo de pedido (usa Playwright + Google Chrome instalado):
+Teste de ponta a ponta do fluxo de pedido (Playwright, que já vem nas devDependencies; usa o Google
+Chrome instalado ou, com `PW_CHANNEL=chromium`, o Chromium do Playwright via
+`npx playwright install chromium`):
 
 ```bash
 npm run build && npx next start -p 3200
-node scripts/e2e-pedido.mjs
+node scripts/e2e-pedido.mjs            # PORTA=xxxx para outra porta; --prints salva prints
 ```
 
 `scripts/print.mjs <caminho> <saida.png> [largura] [altura]` tira prints do servidor na porta 3200
@@ -56,8 +58,11 @@ uma, estão em `docs/prompts-imagens.md`. Basta salvar o arquivo final com o mes
 | `src/components/sections/` | uma seção da página por arquivo |
 | `src/components/sacola/` | sacola, formulário do pedido e confirmação |
 | `specs/001-site-pedidos-whatsapp/` | spec, plano, pesquisa, contratos e tarefas (speckit) |
-| `docs/referencia/` | auditoria do site de referência e prints |
-| `docs/verificacao/` | prints e relatório do Lighthouse do site pronto |
+| `scripts/` | geração de imagens, e2e do pedido e prints |
+| `.github/workflows/ci.yml` | CI: lint, tipos, testes, build e e2e |
 
-Número de WhatsApp, endereço e bairros são inventados; para usar de verdade, troque em
-`src/content/loja.ts`.
+Número de WhatsApp, endereço, bairros e números são inventados e as fotos são geradas por IA; para
+usar de verdade, troque em `src/content/loja.ts`. O site não publica dados estruturados de negócio
+local (só `WebSite`), para o Google não indexar uma padaria que não existe.
+
+No ar: https://fornada.zyphex.site (a URL pública vem de `NEXT_PUBLIC_SITE_URL`).
