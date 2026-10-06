@@ -9,36 +9,17 @@ import { OndeEstamos } from '@/components/sections/OndeEstamos'
 import { Rodape } from '@/components/sections/Rodape'
 import { loja } from '@/content/loja'
 import { textos } from '@/content/textos'
+import { SITE_URL } from '@/content/site'
 
-const DIAS_SCHEMA = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-const hora = (min: number) =>
-  `${String(Math.floor(min / 60)).padStart(2, '0')}:${String(min % 60).padStart(2, '0')}`
-
+// Só o WebSite: a Fornada é fictícia, então não publicamos dados de negócio local (Bakery,
+// endereço, telefone, horário) que o Google poderia indexar como uma padaria real.
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Bakery',
+  '@type': 'WebSite',
   name: loja.marca,
+  url: `${SITE_URL}/`,
   description: textos.meta.descricao,
-  image: '/images/og.jpg',
-  telephone: `+${loja.whatsapp}`,
-  priceRange: '$',
-  servesCuisine: 'Padaria',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: `${loja.endereco.rua}, ${loja.endereco.numero}`,
-    addressLocality: loja.endereco.cidade,
-    addressRegion: loja.endereco.uf,
-    postalCode: loja.endereco.cep,
-    addressCountry: 'BR',
-  },
-  openingHoursSpecification: Object.entries(loja.horarios)
-    .filter(([, h]) => h !== null)
-    .map(([dia, h]) => ({
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: DIAS_SCHEMA[Number(dia)],
-      opens: hora(h!.abre),
-      closes: hora(h!.fecha),
-    })),
+  inLanguage: 'pt-BR',
 }
 
 export default function Home() {

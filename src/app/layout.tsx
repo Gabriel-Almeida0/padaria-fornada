@@ -4,6 +4,7 @@ import { SacolaProvider } from '@/components/sacola/SacolaProvider'
 import { GavetaSacola } from '@/components/sacola/GavetaSacola'
 import { BarraSacolaMobile } from '@/components/sacola/BarraSacolaMobile'
 import { textos } from '@/content/textos'
+import { SITE_URL } from '@/content/site'
 import './globals.css'
 
 // Fontes self-hosted via next/font (research R1). As duas são variáveis: `weight` omitido.
@@ -32,11 +33,13 @@ const figtree = Figtree({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fornada.example'),
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: '/' },
   title: textos.meta.titulo,
   description: textos.meta.descricao,
   openGraph: {
     type: 'website',
+    url: '/',
     locale: 'pt_BR',
     siteName: 'Fornada Padaria',
     title: textos.meta.titulo,
